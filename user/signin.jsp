@@ -77,6 +77,7 @@
 	<title>작성글 확인</title>
 	<link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
   <link href="../stylesheets/signin.css" rel="stylesheet">
+  <link href="../stylesheets/main.css" rel="stylesheet">
 	<script src="../js/jquery-1.11.1.min.js"></script>
 	<script src="../js.bootstrap.min.js"></script>
 </head>
@@ -100,8 +101,39 @@
 
 				}
 			%>
-			<div class="container">
-
+		
+<div id="wrap">
+<%
+	if (session.getAttribute("userid") == null) {
+%>
+	<div id="top">
+	
+		<a href="./users/signup.jsp">회원가입</a>
+		<IMG id="masthead_image" alt="scv_main_logo"
+						src="../images/image4.PNG">
+	</div>
+<%
+	}else{
+%>
+	<div id="top">
+			<A href="users/signout.jsp">로그아웃</A>
+			<A href="users/mypage.jsp">나의페이지</A>
+			<!-- <LI id="friendListButton">친구목록</LI>-->
+			<A href="users/mypage.jsp"><%=session.getAttribute("name")%>님</A>
+			<IMG id="masthead_image" alt="scv_main_logo"
+						src="images/image4.PNG">
+	</div>
+<%} %>
+	<div id="header">
+		
+		<div id="navbar">
+			<ul>
+				<li><a href="../index.jsp">HOME</a></li>
+				<li><a href="">사이트소개</a></li>
+				<li><a href="">봉사</a></li>
+			</ul>	
+		</div>
+		<div class="container">
       <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="form-control" name="userid" placeholder="User ID" autofocus>
@@ -112,6 +144,8 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 			</div>
+		</div>
+</div>
     
 </body>
 </html>
