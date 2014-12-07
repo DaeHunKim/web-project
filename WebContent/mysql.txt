@@ -1,0 +1,49 @@
+
+
+
+CREATE TABLE `friend` (
+  `user1` varchar(30) NOT NULL,
+  `user2` varchar(30) NOT NULL,
+  `confirm` varchar(30) NOT NULL DEFAULT 'false',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+CREATE TABLE `reply` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` varchar(30) NOT NULL,
+  `sketchid` int(11) NOT NULL,
+  `content` text,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE `sketch` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `path` text NOT NULL,
+  `userid` varchar(45) NOT NULL,
+  `subject` varchar(80) not null,
+  `content` text not null,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+
+
+
+
+
+CREATE TABLE `user` (
+  `id` varchar(30) NOT NULL,
+  `password` varchar(80) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
