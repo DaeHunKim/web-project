@@ -18,6 +18,7 @@
 	String userid="";
 	String path = "";
 	String id = "";
+	String created_at = "";
 	
 	//친구 리스트 변수 초기화
 	String userid2 = (String) session.getAttribute("userId");
@@ -35,11 +36,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="stylesheets/main.css" rel="stylesheet" type="text/css">
-<link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
-<script src='js/jquery-1.8.2.min.js'></script>
+<link href="../stylesheets/main.css" rel="stylesheet" type="text/css">
+<link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+<script src='../js/jquery-1.8.2.min.js'></script>
 
-<title>bong4</title>
+<title>그림판 약도로 그리고 봉사도 함께 함께</title>
 
 </head>
 
@@ -49,16 +50,17 @@
 		<div id="wrap">
 			<div id="header" class="clearfix">
 				<div id="title">
-					
+					<A href="./sketch_recent.jsp">최근 게시글</A>
 				</div>
 				<%
 					if (session.getAttribute("userId") == null) {
 				%>
 
 				<UL id="toolbar" class="clearfix">
-					<LI><A href="index.jsp">홈</A></LI>
-					<LI><A href="member/signup.jsp">회원 가입</A></LI>
-					<LI><A href="member/signin.jsp">로그 인</A></LI>
+					<LI><A href="../index.jsp">홈</A></LI>
+					<LI><A href="../member/signup.jsp">회원 가입</A></LI>
+					<LI><A href="../member/signin.jsp">로그 인</A></LI>
+					<LI><A href="../member/photo.jsp">즐거운 봉사</A><LI>
 				</UL>
 
 				<%
@@ -66,30 +68,21 @@
 				%>
 				<UL id="toolbar" class="clearfix">
 					<LI><%=session.getAttribute("userName")%></LI>
-					<LI><A href="index.jsp">홈</A></LI>
-					<LI><A href="member/signout.jsp">로그 아웃</A></LI>
-					<LI><A href="member/mypage.jsp">내정보</A></LI>
-					<LI><A href="sketch/sketch_mypage.jsp">내게시글</A></LI>
-					<LI><A href="sketch/sketch_creative.jsp">게시글 작성</A></LI>
-					<LI><A href="sketch/sketch_list.jsp">게시글 목록</A></LI>
+					<LI><A href="../index.jsp">홈</A></LI>
+					<LI><A href="../member/signout.jsp">로그 아웃</A></LI>
+					<LI><A href="../member/mypage.jsp">내정보</A></LI>
+					<LI><A href="./sketch_mypage.jsp">내게시글</A></LI>
+					<LI><A href="./sketch_creative.jsp">게시글 작성</A></LI>
 				</UL>
 				<%
 					}
 				%>
 			</div>
 
-			<div id="intro">
-				<div id="masthead">
-					<IMG id="masthead_image" alt="main_logo"
-						src="images/bong4_5.jpg" width="500" height="210">
-				</div>
-				<div id="get_sketchin">
-					<a href="sketch/sketch_creative.jsp">게시글 작성하기</a>
-				</div>
-			</div>
 			<div id="content">
 				<div id="content_recent">
-					<h1>최신약도</h1>
+					<h1>모집게시글</h1>
+					
 					<%
 						if (errorMsgs.size() == 0) {
 							try {
@@ -104,26 +97,23 @@
 
 								out.println("<ul>");
 								while (rs.next()) {
-			                           sketch_cnt++;
-			                           path = rs.getString("path");
-			                           userid = rs.getString("userid");
-			                           id = rs.getString("id");
-			                           subject =rs.getString("subject");
-			                           out.println("모집");
-			                           
-			               %>         
-			                  
-			                  <a href ="sketch/sketch_item.jsp?userid=<%=userid%>&id=<%=id%>"><img
-			                  src="<%=path%>" width="270" height="250"></a>
-			             
-			             <% if(sketch_cnt%3==0){
-			                out.println("<br>");
-			             }
-			             
-			             %>
+									sketch_cnt++;
+									path = rs.getString("path");
+									userid = rs.getString("userid");
+									id = rs.getString("id");
+									subject = rs.getString("subject");
+									created_at = rs.getString("created_at");
+					%>
+					<table border="1">
+									<tr><td>글제목</td><td colspan="3"><a href="./sketch_item.jsp?userid=<%=userid%>&id=<%=id%>"><%=subject %></a></td></tr>
+									<tr><td>작성자</td><td colspan="3"><%=userid %></td></tr>
+									<tr><td>생성일</td><td colspan="3"><%=created_at %></td></tr>
+					</table>
+					
+
 					<%
-						if (sketch_cnt > 2) {
-										out.println("<h1 align='right'><a href='sketch/sketch_list.jsp'>더보기..</a></h1>");
+						if (sketch_cnt > 5) {
+										out.println("<h1 align='right'><a href='./sketch_recent.jsp'>more...</a></h1>");
 										break;
 
 									}

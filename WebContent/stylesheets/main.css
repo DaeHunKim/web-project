@@ -1,0 +1,248 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	color: rgb(77, 74, 70);
+	line-height: 15px;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	background-attachment: fixed;
+}
+
+body#home #sketchy_bg {
+	background-position: center;
+	width: 100%;
+	height: 315px;
+	display: block;
+	background-repeat: no-repeat;
+}
+
+body#home #intro {
+	background-position: bottom;
+	height: 270px;
+	margin-bottom: 30px;
+	background-image: url("../images/dotted_line.png");
+	background-repeat: repeat-x;
+}
+
+#friendListButton:hover{
+	cursor:pointer;
+}
+
+
+
+#fake_body {
+	top: 0px;
+	width: 100%;
+	position: absolute;
+}
+
+#intro #masthead {
+	width: 630px;
+	height: 280px;
+	float: left;
+	position: absolute;
+}
+
+#intro #masthead #masthead_image {
+	margin-left: 100px;
+}
+
+#intro #get_sketchin {
+	width: 290px;
+	height: 210px;
+	text-indent: -9999px;
+	margin-top: 30px;
+	float: right;
+	position: relative;
+	background-image: url("../images/bong4_6.jpg");
+	background-repeat: no-repeat;
+}
+
+#intro #get_sketchin a {
+	left: 55px;
+	bottom: 10px;
+	text-indent: 0px;
+	position: absolute;
+	padding-bottom: 20px;
+}
+
+#header {
+	background-position: bottom;
+	padding: 23px 0px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	background-image: url("../images/dotted_line.png");
+	background-repeat: repeat-x;
+}
+
+a {
+	border: 0px;
+	color: rgb(183, 112, 132);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: 0;
+}
+
+#wrap {
+	margin: 0px auto;
+	width: 960px;
+}
+
+
+#home #header {
+	margin-bottom: 0px;
+}
+
+#header #toolbar a {
+	color: rgb(77, 74, 70);
+}
+
+#header div#title {
+	width: auto;
+	height: auto;
+	text-indent: 0px;
+	font-size: 11px;
+	float: left;
+	background-image: none;
+}
+
+#content_best {
+	background-position: bottom;
+	width: 100%;
+	height: 350px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-image: url("../images/dotted_line.png");
+	background-repeat: repeat-x;
+}
+
+#content_recent {
+	background-position: bottom;
+	width: 100%;
+	height: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-image: url("../images/dotted_line.png");
+	background-repeat: repeat-x;
+}
+
+#content_recent_info {
+	background-position: bottom;
+	width: 100%;
+	height: 250px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-image: url("../images/dotted_line.png");
+	background-repeat: repeat-x;
+}
+
+#content_item {
+	background-position: bottom;
+	width: 100%;
+	height: 600px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-image: url("../images/dotted_line.png");
+	background-repeat: repeat-x;
+}
+
+#content_comment {
+	background-position: bottom;
+	width: 100%;
+	height: 250px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-image: url("../images/dotted_line.png");
+	background-repeat: repeat-x;
+}
+
+#content h1 {
+	margin: 20px;
+}
+
+#content ul {
+	margin: 20px;
+	list-style: none;
+}
+
+#content #content_best li {
+	float: left;
+}
+
+#content #content_recent li {
+	float: left;
+}
+
+#header div#title a {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#header div#title a:hover {
+	text-decoration: underline;
+}
+
+#header ul {
+	float: right;
+	list-style-type: none;
+}
+
+#header ul li {
+	padding-right: 10px;
+	margin-right: 10px;
+	border-right-color: rgb(219, 208, 183);
+	border-right-width: 1px;
+	border-right-style: solid;
+	float: left;
+}
+
+#sketch_item_reply h2 {
+	padding: 10px;
+}
+#sketch_list{
+	float :left;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix {
+	display: block;
+}
+
+#footer {
+	background-color: #b09c9c;
+	color: #fff;
+	text-align: right;
+	padding: 20px;
+	font: 12px Tahoma;
+}
+
+body > .container {
+  padding: 60px 15px 0;
+  padding-top:60px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
